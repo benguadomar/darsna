@@ -4,22 +4,26 @@
 
 Live demo: https://benguadomar.github.io/darsna/
 
-Darsna is a multilingual study-resource library designed for Moroccan high-school students. It turns scattered links, PDFs, videos, and interactive tools into a clear collection with visible source, freshness, and review information.
+Darsna helps Moroccan high-school students rescue study links that get lost in class group chats, and keeps them in a clear, multilingual library with visible source, freshness, and review information.
 
 ## The problem
 
-Useful study material is spread across WhatsApp chats, old Drive folders, and websites in Arabic, French, and English. Links get lost, repeat, or become outdated, and students cannot quickly tell which resources are credible.
+Useful study material is spread across WhatsApp chats, old Drive folders, and websites in Arabic, French, and English. Links get lost, are shared again and again, or quietly stop working, and students cannot quickly tell which resources are credible.
 
-## What the prototype does
+## Features
 
-- Searches and filters resources by subject, level, language, and format.
-- Shows transparent trust labels, original sources, and review dates.
-- Supports English, French, and Arabic with a full RTL interface.
-- Saves favorites locally without requiring an account.
-- Lets students suggest a resource without uploading personal data.
-- Works across desktop and mobile layouts.
+- **Link Rescue.** Paste a WhatsApp conversation (or any messy text). Darsna extracts every link, removes duplicates and tracking parameters, guesses the subject from the surrounding message in Arabic, Darija, French, or English, and labels the source:
+  - `.gov.ma` domains are marked **Official source**.
+  - Known education platforms are marked **Trusted platform**.
+  - Everything else stays **Not reviewed**.
+  - Shortened links (bit.ly, etc.) and shared files (Drive, Dropbox) get a warning because their destination can be hidden or disappear.
+- **One-link sharing.** Saved resources can be shared as a single link or straight to WhatsApp. The whole list is encoded inside the link itself, so nothing is uploaded and no account is needed. Opening a shared link shows the collection with a "Save all" option.
+- **Searchable library** filtered by subject, level, language, and format, with honest trust labels on every card.
+- **Arabic, French, and English**, including a full right-to-left layout. The language choice is remembered.
+- **Private by design.** Favorites, rescued links, and pasted chats stay in the browser's local storage.
+- **Works offline** after the first visit, thanks to a small service worker.
 
-The current hackathon build uses a small curated dataset and stores suggestions and favorites only in the browser. Entries marked "Demo example" illustrate how unreviewed suggestions appear. A production version would add moderated community submissions, teacher review, broken-link checks, and curriculum mapping.
+This is a hackathon prototype: the curated library is small, and two entries marked "Demo example" illustrate how unreviewed suggestions appear. A production version would add moderated submissions, teacher review, automatic broken-link checks, and curriculum mapping.
 
 ## Run locally
 
@@ -28,24 +32,27 @@ npm install
 npm run dev
 ```
 
-Production check:
+Checks:
 
 ```bash
-npm run build
+npm test
 npm run lint
+npm run build
 ```
+
+The tests cover link extraction (chat prefixes, duplicates, tracking parameters, look-alike domains) and the shared-link encoding, including rejection of unsafe `javascript:` links.
 
 ## Technology
 
-- React 19
-- TypeScript
+- React 19 and TypeScript
 - Vite
+- Vitest
 - Lucide icons
-- Browser local storage
+- Browser local storage and a service worker
 
 ## Responsible AI disclosure
 
-Cursor was used as an AI coding assistant for implementation, copy refinement, and debugging. The concept, problem selection, product decisions, testing, and final submission remain the participant's responsibility. The project does not send student data to an AI service.
+Cursor was used as an AI coding assistant for implementation, copy refinement, debugging, and the automated demo recording. The concept, problem selection, product decisions, testing, and final submission remain the participant's responsibility. The project does not send student data to an AI service.
 
 ## Neighborhood Hacks 2026
 
