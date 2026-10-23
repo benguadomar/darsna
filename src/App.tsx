@@ -22,6 +22,8 @@ import {
   X,
 } from 'lucide-react'
 import './App.css'
+import type { DisplaySettings } from './components/DisplayMenu'
+import { DisplayMenu } from './components/DisplayMenu'
 import { LinkRescue } from './components/LinkRescue'
 import { ResourceCard } from './components/ResourceCard'
 import { ShareDialog } from './components/ShareDialog'
@@ -42,7 +44,12 @@ import { linkKey } from './rescue'
 import type { SharedItem } from './share'
 import { decodeCollection, encodeCollection, isWebUrl } from './share'
 
-const STORAGE = { saved: 'darsna-saved', custom: 'darsna-custom', language: 'darsna-language' }
+const STORAGE = {
+  saved: 'darsna-saved',
+  custom: 'darsna-custom',
+  language: 'darsna-language',
+  display: 'darsna-display',
+}
 
 type Incoming = { ids: number[]; extra: Resource[] }
 
@@ -57,6 +64,12 @@ function readJson(key: string): unknown {
 function readLanguage(): Language {
   const stored = localStorage.getItem(STORAGE.language)
   return languages.find((code) => code === stored) ?? 'en'
+}
+
+function readDisplay(): DisplaySettings {
+  const stored = readJson(STORAGE.display)
+  const value = stored && typeof stored === 'object' ? (stored as Partial<DisplaySettings>) : {}
+  return { largeText: value.largeText === true, highContrast: value.highContrast === true }
 }
 
 function readSaved(): number[] {
@@ -109,8 +122,9 @@ function readIncoming(existing: Resource[]): Incoming | null {
 }
 
 function scrollToSection(id: string) {
+  const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
   window.requestAnimationFrame(() => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    document.getElementById(id)?.scrollIntoView({ behavior, block: 'start' })
   })
 }
 
@@ -118,6 +132,7 @@ const emptyForm = { title: '', url: '', subject: 'General' as ResourceSubject, l
 
 function App() {
   const [language, setLanguage] = useState<Language>(readLanguage)
+  const [display, setDisplay] = useState<DisplaySettings>(readDisplay)
   const [query, setQuery] = useState('')
   const [subject, setSubject] = useState<Subject>('All')
   const [savedOnly, setSavedOnly] = useState(false)
@@ -141,6 +156,13 @@ function App() {
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr'
     localStorage.setItem(STORAGE.language, language)
   }, [language])
+
+  useEffect(() => {
+    const root = document.documentElement
+    root.classList.toggle('large-text', display.largeText)
+    root.classList.toggle('high-contrast', display.highContrast)
+    localStorage.setItem(STORAGE.display, JSON.stringify(display))
+  }, [display])
 
   useEffect(() => {
     localStorage.setItem(STORAGE.saved, JSON.stringify(saved))
@@ -291,6 +313,7 @@ function App() {
 
   return (
     <div className="app-shell">
+      <a className="skip-link" href="#top">{t.skipToContent}</a>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Darsna">
           <span className="brand-mark"><BookOpen aria-hidden="true" /></span>
@@ -304,6 +327,7 @@ function App() {
         </nav>
 
         <div className="header-actions">
+          <DisplayMenu t={t} settings={display} onChange={setDisplay} />
           <label className="language-picker">
             <Globe aria-hidden="true" />
             <span className="sr-only">{t.languageLabel}</span>
@@ -553,7 +577,7 @@ function App() {
           <div className="mission-content">
             <p>{t.missionBody}</p>
             <ul>
-              {[t.builtFor, t.privacy, t.accessible, t.offline].map((item) => (
+              {[t.builtFor, t.privacy, t.accessible, t.inclusive, t.offline].map((item) => (
                 <li key={item}><Check aria-hidden="true" />{item}</li>
               ))}
             </ul>

@@ -20,6 +20,7 @@ Useful study material is spread across WhatsApp chats, old Drive folders, and we
 - **One-link sharing.** Saved resources can be shared as a single link or straight to WhatsApp. The whole list is encoded inside the link itself, so nothing is uploaded and no account is needed. Opening a shared link shows the collection with a "Save all" option.
 - **Searchable library** filtered by subject, level, language, and format, with honest trust labels on every card.
 - **Arabic, French, and English**, including a full right-to-left layout. The language choice is remembered.
+- **Display options** for larger text and high contrast, a skip-to-content link, and animations that respect the system's reduced-motion setting.
 - **Private by design.** Favorites, rescued links, and pasted chats stay in the browser's local storage.
 - **Works offline** after the first visit, thanks to a small service worker.
 
@@ -54,6 +55,6 @@ The tests cover link extraction (chat prefixes, duplicates, tracking parameters,
 
 Cursor was used as an AI coding assistant for implementation, copy refinement, debugging, and the automated demo recording. The concept, problem selection, product decisions, testing, and final submission remain the participant's responsibility. The project does not send student data to an AI service.
 
-## Neighborhood Hacks 2026
+## About
 
-Darsna was created during the official Neighborhood Hacks 2026 build period for the Education & Access track.
+Darsna was created in October 2026 by a student in Casablanca.

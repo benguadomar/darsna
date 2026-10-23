@@ -2099,3 +2099,225 @@ main section[id] {
     width: 100%;
   }
 }
+
+.skip-link {
+  background: var(--ink);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  inset-block-start: 10px;
+  inset-inline-start: 10px;
+  padding: 10px 14px;
+  position: fixed;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 160ms ease;
+  z-index: 200;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.display-menu {
+  position: relative;
+}
+
+.icon-button {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--line-strong);
+  border-radius: 11px;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.icon-button svg {
+  height: 18px;
+  width: 18px;
+}
+
+.icon-button[aria-expanded='true'] {
+  background: var(--lime);
+  border-color: var(--ink);
+}
+
+.display-panel {
+  background: #fff;
+  border: 1px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: 6px 8px 0 rgba(19, 32, 29, 0.18);
+  inset-block-start: 50px;
+  inset-inline-end: 0;
+  padding: 16px;
+  position: absolute;
+  width: 270px;
+  z-index: 70;
+}
+
+.display-panel > strong {
+  color: var(--ink);
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.display-panel > p {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 10px 0 0;
+}
+
+.switch-row {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  font: 700 13px var(--font-body);
+  justify-content: space-between;
+  padding: 12px 0;
+  width: 100%;
+}
+
+.switch {
+  background: var(--line-strong);
+  border-radius: 999px;
+  display: inline-flex;
+  flex: none;
+  height: 22px;
+  padding: 3px;
+  transition: background 160ms ease;
+  width: 40px;
+}
+
+.switch span {
+  background: #fff;
+  border-radius: 50%;
+  height: 16px;
+  transition: transform 160ms ease;
+  width: 16px;
+}
+
+.switch-row[aria-checked='true'] .switch {
+  background: var(--forest);
+}
+
+.switch-row[aria-checked='true'] .switch span {
+  transform: translateX(18px);
+}
+
+[dir='rtl'] .switch-row[aria-checked='true'] .switch span {
+  transform: translateX(-18px);
+}
+
+html.large-text .nav-links a { font-size: 16px; }
+html.large-text .hero-copy > p { font-size: 20px; }
+html.large-text .hero-stats span { font-size: 13px; }
+html.large-text .button,
+html.large-text .text-link { font-size: 15px; }
+html.large-text .section-heading p,
+html.large-text .trust-intro > p,
+html.large-text .rescue-intro > p,
+html.large-text .mission-content > p { font-size: 18px; }
+html.large-text .rescue-form label { font-size: 13px; }
+html.large-text .rescue-form textarea,
+html.large-text .search-box input { font-size: 15px; }
+html.large-text .example-note,
+html.large-text .results-meta,
+html.large-text .shared-banner__text span { font-size: 13px; }
+html.large-text .rescue-stats span,
+html.large-text .rescued-meta,
+html.large-text .resource-meta span { font-size: 12.5px; }
+html.large-text .rescued-body strong { font-size: 15px; }
+html.large-text .chip,
+html.large-text .resource-tags span,
+html.large-text .prototype-label,
+html.large-text .trust-badge strong { font-size: 11.5px; }
+html.large-text .trust-badge small,
+html.large-text .updated { font-size: 10.5px; }
+html.large-text .filter-pill,
+html.large-text .saved-filter,
+html.large-text .share-button,
+html.large-text .resource-link { font-size: 13.5px; }
+html.large-text .resource-card h3 { font-size: 21px; }
+html.large-text .resource-card > p,
+html.large-text .trust-steps p,
+html.large-text .modal > p,
+html.large-text .switch-row,
+html.large-text .modal input,
+html.large-text .modal select { font-size: 14.5px; }
+html.large-text .trust-steps h3 { font-size: 19px; }
+html.large-text .trust-score-card small,
+html.large-text .mission-content li,
+html.large-text .toast,
+html.large-text .study-step strong { font-size: 13.5px; }
+html.large-text .site-footer > div:nth-child(2) span,
+html.large-text .site-footer > span,
+html.large-text .study-step small,
+html.large-text .study-card__footer { font-size: 11.5px; }
+html.large-text .modal label,
+html.large-text .display-panel > p { font-size: 12.5px; }
+
+html.high-contrast {
+  --muted: #2b3532;
+  --line: #8c9691;
+  --line-strong: #4b5551;
+  --paper: #ffffff;
+}
+
+html.high-contrast .site-header {
+  background: #fff;
+}
+
+html.high-contrast a:not(.button):not(.brand):not(.skip-link),
+html.high-contrast .text-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+html.high-contrast .updated,
+html.high-contrast .trust-steps article > span,
+html.high-contrast .resource-tags span,
+html.high-contrast .mission-content > p,
+html.high-contrast .filter-pill:not(.filter-pill--active):not(:hover),
+html.high-contrast .saved-filter:not(.saved-filter--active):not(:hover) {
+  color: var(--ink);
+}
+
+html.high-contrast .rescue-stats span,
+html.high-contrast .rescue-empty p,
+html.high-contrast .trust-score-card small,
+html.high-contrast .site-footer > div:nth-child(2) span,
+html.high-contrast .site-footer > span {
+  color: #fff;
+}
+
+html.high-contrast .rescued-item:not(.rescued-item--selected) {
+  border-color: var(--line);
+  border-style: dashed;
+  opacity: 1;
+}
+
+html.high-contrast .chip--official { background: #14532d; color: #fff; }
+html.high-contrast .chip--trusted { background: #1e3a8a; color: #fff; }
+html.high-contrast .chip--unreviewed { background: #713f12; color: #fff; }
+html.high-contrast .chip--count { background: #3730a3; color: #fff; }
+html.high-contrast .chip--warning { background: #9a1f0b; color: #fff; }
+html.high-contrast .chip--library { background: #fff; border: 1px solid var(--ink); color: var(--ink); }
+
+html.high-contrast .trust-badge > svg { color: #14532d; }
+html.high-contrast .trust-badge--trusted > svg { color: #1e3a8a; }
+html.high-contrast .trust-badge--unreviewed > svg { color: #713f12; }
+
+html.high-contrast ::placeholder {
+  color: #4b5551;
+}

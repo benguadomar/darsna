@@ -10,6 +10,11 @@ const en = {
   add: 'Suggest a resource',
   languageLabel: 'Interface language',
   menuLabel: 'Toggle navigation',
+  skipToContent: 'Skip to content',
+  displayLabel: 'Display options',
+  largerText: 'Larger text',
+  highContrast: 'High contrast',
+  displayNote: 'Saved on this device. Animations follow your system’s reduced-motion setting.',
   eyebrow: 'Built by students, for students',
   heroTitleA: 'Good study resources.',
   heroTitleB: 'One trusted place.',
@@ -106,6 +111,7 @@ const en = {
   builtFor: 'Designed for Moroccan high-school students',
   privacy: 'Your library and pasted chats stay on your device',
   accessible: 'Arabic, French and English, including right-to-left',
+  inclusive: 'Larger text and high-contrast modes',
   offline: 'Works offline after the first visit',
   modalTitle: 'Suggest a resource',
   modalBody: 'Add a useful link. It is saved on your device and marked “Not reviewed”.',
@@ -123,7 +129,7 @@ const en = {
   sharedDescription: 'Received in a shared collection. Not reviewed yet.',
   footerLine: 'Learning should feel clear, not scattered.',
   disclosure: 'Built with React, TypeScript and Cursor. AI assistance disclosed.',
-  footerEvent: 'Neighborhood Hacks · 2026',
+  footerEvent: 'Made in Casablanca · 2026',
 }
 
 export type Copy = Record<keyof typeof en, string>
@@ -136,6 +142,11 @@ const fr: Copy = {
   add: 'Proposer une ressource',
   languageLabel: 'Langue de l’interface',
   menuLabel: 'Ouvrir le menu',
+  skipToContent: 'Aller au contenu',
+  displayLabel: 'Options d’affichage',
+  largerText: 'Texte plus grand',
+  highContrast: 'Contraste élevé',
+  displayNote: 'Enregistré sur cet appareil. Les animations suivent le réglage « réduire les animations » de votre système.',
   eyebrow: 'Créé par des élèves, pour les élèves',
   heroTitleA: 'De bonnes ressources.',
   heroTitleB: 'Un seul endroit fiable.',
@@ -234,6 +245,7 @@ const fr: Copy = {
   builtFor: 'Pensé pour les lycéens marocains',
   privacy: 'Votre bibliothèque et vos discussions collées restent sur votre appareil',
   accessible: 'Arabe, français et anglais, y compris de droite à gauche',
+  inclusive: 'Modes texte agrandi et contraste élevé',
   offline: 'Fonctionne hors ligne après la première visite',
   modalTitle: 'Proposer une ressource',
   modalBody: 'Ajoutez un lien utile. Il est enregistré sur votre appareil et marqué « non vérifié ».',
@@ -251,7 +263,7 @@ const fr: Copy = {
   sharedDescription: 'Reçu dans une sélection partagée. Pas encore vérifié.',
   footerLine: 'Apprendre doit être clair, pas dispersé.',
   disclosure: 'Créé avec React, TypeScript et Cursor. Assistance IA déclarée.',
-  footerEvent: 'Neighborhood Hacks · 2026',
+  footerEvent: 'Fait à Casablanca · 2026',
 }
 
 const ar: Copy = {
@@ -262,6 +274,11 @@ const ar: Copy = {
   add: 'اقترح مورداً',
   languageLabel: 'لغة الواجهة',
   menuLabel: 'فتح القائمة',
+  skipToContent: 'انتقل إلى المحتوى',
+  displayLabel: 'خيارات العرض',
+  largerText: 'نص أكبر',
+  highContrast: 'تباين عالٍ',
+  displayNote: 'تُحفظ على هذا الجهاز. تتبع الحركات إعداد «تقليل الحركة» في نظامك.',
   eyebrow: 'من الطلاب، للطلاب',
   heroTitleA: 'موارد دراسية جيدة.',
   heroTitleB: 'في مكان واحد موثوق.',
@@ -356,6 +373,7 @@ const ar: Copy = {
   builtFor: 'مصممة لطلاب الثانوي في المغرب',
   privacy: 'تبقى مكتبتك ومحادثاتك الملصقة على جهازك',
   accessible: 'العربية والفرنسية والإنجليزية، مع دعم الكتابة من اليمين إلى اليسار',
+  inclusive: 'وضعا النص الأكبر والتباين العالي',
   offline: 'تعمل دون إنترنت بعد الزيارة الأولى',
   modalTitle: 'اقترح مورداً',
   modalBody: 'أضف رابطاً مفيداً. يُحفظ على جهازك ويُصنّف «غير مراجَع».',
@@ -373,7 +391,7 @@ const ar: Copy = {
   sharedDescription: 'وصل ضمن مجموعة مشتركة. لم يُراجع بعد.',
   footerLine: 'يجب أن يكون التعلم واضحاً، لا مبعثراً.',
   disclosure: 'بُني باستخدام React وTypeScript وCursor مع التصريح بمساعدة الذكاء الاصطناعي.',
-  footerEvent: 'Neighborhood Hacks · 2026',
+  footerEvent: 'صُنع في الدار البيضاء · 2026',
 }
 
 export const copy: Record<Language, Copy> = { en, fr, ar }
