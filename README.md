@@ -3,12 +3,13 @@
 **Good study resources. One trusted place.**
 
 Live demo: https://benguadomar.github.io/darsna/
+Video walkthrough: https://youtu.be/YfPt58c63bE
 
 Darsna helps Moroccan high-school students rescue study links that get lost in class group chats, and keeps them in a clear, multilingual library with visible source, freshness, and review information.
 
 ## The problem
 
-Useful study material is spread across WhatsApp chats, old Drive folders, and websites in Arabic, French, and English. Links get lost, are shared again and again, or quietly stop working, and students cannot quickly tell which resources are credible.
+Useful study material is spread across WhatsApp chats, old Drive folders, and websites in Arabic, French, and English. Links get lost, are shared again and again, or quietly stop working, and students cannot quickly tell which resources are credible. In a quick check with 10 classmates, most said the same study links keep getting re-sent in their group chats before exams.
 
 ## Features
 
